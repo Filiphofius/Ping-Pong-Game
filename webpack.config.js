@@ -1,6 +1,6 @@
 const webpack = require('webpack')
 const failPlugin = require('webpack-fail-plugin')
-const tslint = require('tslint-loader')
+//const tslint = require('tslint-loader')
 
 const isProd = process.env.NODE_ENV === 'production'
 var prodPlugins = []
@@ -31,15 +31,15 @@ module.exports = {
       { test: /\.ts$/, loader: 'ts-loader' },
       // { test: /\.css$/, loader: "style!css" }, // CSS
       { test: /\.less$/, loader: "style!css!less" }, //LESS https://github.com/webpack/less-loader
-      { test: /\.(eot|svg|ttf|woff|woff2)$/, loader: 'file?name=dist/fonts/[name].[ext]'}, // Fonts
-      { test: /\.(jpg|png|svg)$/, loader: 'file?name=dist/images/[name].[ext]'} // Images
+      { test: /\.(eot|svg|ttf|woff|woff2)$/, loader: 'file?name=dist/fonts/[name].[ext]' }, // Fonts
+      { test: /\.(jpg|png|svg)$/, loader: 'file?name=dist/images/[name].[ext]' } // Images
     ],
-    preLoaders: [
-      {
-        test: /\.ts$/,
-        loader: "tslint"
-      }
-    ]
+    // preLoaders: [
+    //   {
+    //     test: /\.ts$/,
+    //     loader: "tslint"
+    //   }
+    // ]
   },
   tslint: {
     emitErrors: true,
